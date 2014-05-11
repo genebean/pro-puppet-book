@@ -7,6 +7,8 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "genebean/centos6-64bit"
 
+  config.vm.hostname = "puppet-dev01"
+
   config.vm.provision "shell", path: "scripts/puppet.sh"
 
   config.vm.provider "vmware_fusion" do |v|
